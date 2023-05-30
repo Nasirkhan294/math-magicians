@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Project Demo](https://nasirkhan294.github.io/math-magicians/)
+- [Live Project Demo]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
