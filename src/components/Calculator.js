@@ -1,45 +1,37 @@
-import PropTypes from 'prop-types';
+import { useState } from 'react';
+import DigitsButtons from './DigitsButtons';
+import OperatorsButtons from './OperatorsButtons';
 import './Calculator.css';
-
-// Child Component
-function Button({ label }) {
-  return (
-    <button type="button" className="cal-btn">
-      {label}
-    </button>
-  );
-}
-
-Button.propTypes = { label: PropTypes.string.isRequired };
+import Calculate from './logic/calculate';
 
 export default function Calculator() {
+  const [displayValue, setDisplayValue] = useState('0');
+  const [calculatorData, setCalculatorData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+
+  const handleButtonClick = (buttonName) => {
+    const newData = Calculate(calculatorData, buttonName);
+    setCalculatorData(newData);
+
+    // Update the display value based on the calculator data
+    let newDisplayValue = '0';
+    if (newData.next) {
+      newDisplayValue = newData.next;
+    } else if (newData.total) {
+      newDisplayValue = newData.total;
+    }
+    setDisplayValue(newDisplayValue);
+  };
+
   return (
     <div className="calculator">
-      <div className="cal-display">0</div>
+      <div className="cal-display">{displayValue}</div>
       <div className="buttons-wrapper">
-        <div className="cal-digits">
-          <Button label="AC" />
-          <Button label="+/-" />
-          <Button label="%" />
-          <Button label="9" />
-          <Button label="8" />
-          <Button label="7" />
-          <Button label="6" />
-          <Button label="5" />
-          <Button label="4" />
-          <Button label="3" />
-          <Button label="2" />
-          <Button label="1" />
-          <Button label="0" />
-          <Button label="." />
-        </div>
-        <div className="cal-operators">
-          <Button label="/" />
-          <Button label="*" />
-          <Button label="-" />
-          <Button label="+" />
-          <Button label="=" />
-        </div>
+        <DigitsButtons handleButtonClick={handleButtonClick} />
+        <OperatorsButtons handleButtonClick={handleButtonClick} />
       </div>
     </div>
   );

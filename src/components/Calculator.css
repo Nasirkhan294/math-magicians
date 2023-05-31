@@ -37,14 +37,15 @@
   flex: 1 1 33.3333%;
   min-height: 60px;
   border: none;
-  border-right: 1px solid #858694;
-  border-bottom: 1px solid #858694;
+  border-right: 1px solid #c3c3c3;
+  border-bottom: 1px solid #c3c3c3;
   outline: none;
   font-size: 16px;
 }
 
 .cal-btn:hover {
   background-color: #d3d3d4;
+  color: #de6b0c;
 }
 
 .cal-operators .cal-btn {
@@ -54,6 +55,7 @@
 
 .cal-operators .cal-btn:hover {
   background-color: #de6b0c;
+  color: #fff;
 }
 
 .cal-digits .cal-btn:nth-of-type(13) {
