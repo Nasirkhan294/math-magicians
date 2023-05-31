@@ -1,69 +1,27 @@
 import { useState } from 'react';
-import DigitsButtons from './logic/DigitsButtons';
-import OperatorsButtons from './logic/OperatorsButtons';
+import DigitsButtons from './DigitsButtons';
+import OperatorsButtons from './OperatorsButtons';
 import './Calculator.css';
+import calculate from './logic/calculate';
 
 export default function Calculator() {
-  const [displayValue, setDisplayValue] = useState('0');
-  const [storedValue, setStoredValue] = useState(null);
-  const [operator, setOperator] = useState(null);
+  const [state, setState] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  const handleDigitClick = (digit) => {
-    if (displayValue === '0') {
-      setDisplayValue(digit);
-    } else {
-      setDisplayValue((prevDisplay) => prevDisplay + digit);
-    }
-  };
-
-  const performCalculation = () => {
-    const currentValue = parseFloat(displayValue);
-
-    if (operator === '+') {
-      setDisplayValue(storedValue + currentValue);
-    } else if (operator === '-') {
-      setDisplayValue(storedValue - currentValue);
-    } else if (operator === '*') {
-      setDisplayValue(storedValue * currentValue);
-    } else if (operator === '/') {
-      setDisplayValue(storedValue / currentValue);
-    }
-
-    setStoredValue(null);
-    setOperator(null);
-  };
-
-  const handleOperatorClick = (op) => {
-    if (operator && storedValue !== null) {
-      performCalculation();
-    }
-
-    setStoredValue(parseFloat(displayValue));
-    setOperator(op);
-    setDisplayValue('0');
-  };
-
-  const handleEqualClick = () => {
-    if (operator && storedValue !== null) {
-      performCalculation();
-    }
-  };
-
-  const handleClearClick = () => {
-    setDisplayValue('0');
-    setStoredValue(null);
-    setOperator(null);
+  const handleButtonClick = (buttonName) => {
+    const newData = calculate(state, buttonName);
+    setState(newData);
   };
 
   return (
     <div className="calculator">
-      <div className="cal-display">{displayValue}</div>
+      <div className="cal-display">{state.next || state.total || '0'}</div>
       <div className="buttons-wrapper">
-        <DigitsButtons handleClearClick={handleClearClick} handleDigitClick={handleDigitClick} />
-        <OperatorsButtons
-          handleEqualClick={handleEqualClick}
-          handleOperatorClick={handleOperatorClick}
-        />
+        <DigitsButtons handleButtonClick={handleButtonClick} />
+        <OperatorsButtons handleButtonClick={handleButtonClick} />
       </div>
     </div>
   );
