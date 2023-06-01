@@ -1,3 +1,11 @@
 .quotes {
-  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.quote {
+  font-size: 2rem;
+  width: 100%;
 }

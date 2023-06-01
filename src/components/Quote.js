@@ -14,7 +14,7 @@ function Quote() {
       .then((resp) => resp.json())
       .then((apiData) => {
         setLoading(false);
-        const body = `${apiData[0].quote} -  by ${apiData[0].author}`;
+        const body = `${apiData[0].quote} - ${apiData[0].author}`;
         setQuote(body);
       })
       .catch((error) => {
@@ -38,7 +38,7 @@ function Quote() {
 
   return (
     <div className="quotes">
-      <p className="quote">{quote}</p>
+      <q className="quote">{quote}</q>
     </div>
   );
 }
