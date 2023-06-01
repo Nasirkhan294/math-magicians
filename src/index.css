@@ -11,3 +11,9 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
+.App {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
