@@ -1,0 +1,25 @@
+const Home = () => (
+  <div className="home-page">
+    <h3>Welcome to our page!</h3>
+    <p>
+      Welcome to Math Magicians, the ultimate destination for mathematics enthusiasts!
+      Our dynamic and interactive website is specifically designed to captivate and
+      engage users in the fascinating world of mathematics. As a Single Page App (SPA),
+      we offer a diverse range of features that make learning and exploring mathematical
+      concepts intuitive and accessible to all. Whether you&apos;re a student, a teacher, or simply
+      curious about the beauty of numbers,
+      Math Magicians is here to ignite your passion for mathematics.
+    </p>
+    <p>
+      At Math Magicians, we believe that mathematics is not just a subject,
+      but a captivating journey of discovery. Our website provides a seamless user experience,
+      allowing you to delve into a multitude of mathematical topics with ease.
+      With our intuitive interface
+      and engaging visuals, you can unlock the magic of math like never before.
+      Join us on this exciting adventure, and let Math Magicians transform the way you
+      perceive and appreciate the power of numbers.
+    </p>
+  </div>
+);
+
+export default Home;
