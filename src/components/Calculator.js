@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import DigitsButtons from './DigitsButtons';
 import OperatorsButtons from './OperatorsButtons';
-import './Calculator.css';
 import Calculate from './logic/calculate';
 
 export default function Calculator() {
@@ -27,11 +26,16 @@ export default function Calculator() {
   };
 
   return (
-    <div className="calculator">
-      <div className="cal-display">{displayValue}</div>
-      <div className="buttons-wrapper">
-        <DigitsButtons handleButtonClick={handleButtonClick} />
-        <OperatorsButtons handleButtonClick={handleButtonClick} />
+    <div className="calculator-container">
+      <div className="cal-text">
+        <h3>Let&apos;s do some math!</h3>
+      </div>
+      <div className="calculator">
+        <div className="cal-display">{displayValue}</div>
+        <div className="buttons-wrapper">
+          <DigitsButtons handleButtonClick={handleButtonClick} />
+          <OperatorsButtons handleButtonClick={handleButtonClick} />
+        </div>
       </div>
     </div>
   );
