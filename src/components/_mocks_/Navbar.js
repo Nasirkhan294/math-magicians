@@ -13,8 +13,10 @@ const Nav = () => (
       <h1>~ Math Magician ~</h1>
       <ul>
         {Navbar.map((link) => (
-          <li key={link}>
-            <NavLink to={link.to} className="nav-link">{link.text}</NavLink>
+          <li key={link.to}>
+            <NavLink to={link.to} className="nav-link">
+              {link.text}
+            </NavLink>
           </li>
         ))}
       </ul>
