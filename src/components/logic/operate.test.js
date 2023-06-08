@@ -29,7 +29,7 @@ describe('Test for operation', () => {
     const result = operate('5', '0', '%');
     expect(result).toBe("Can't find modulo as can't divide by 0.");
   });
-//   it('invalid operation', () => {
-//     expect(() => operate('5', '2', '@')).toThrow();
-//   });
+  it('invalid operation', () => {
+    expect(() => operate('5', '2', '@')).toThrow();
+  });
 });
