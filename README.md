@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Math Magicians</b></h3>
+  <h1><b>Math Magicians</b></h1>
 
 </div>
 
@@ -45,7 +45,7 @@
 ### Key Features <a name="key-features"></a>
 
 - [x] **Single Page App**
-- [x] **Project setup**
+- [x] **Working website**
 - [x] **Medium Fidelity Design**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- - [Live Project Demo]() -->
+- [Live Project Demo](https://math-magicians-294.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
